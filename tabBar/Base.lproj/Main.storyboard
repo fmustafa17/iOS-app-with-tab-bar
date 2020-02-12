@@ -56,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-2" translatesAutoresizingMaskIntoConstraints="NO" id="Gr4-eU-UMS">
-                                <rect key="frame" x="-113" y="-120.66666666666669" width="640" height="1137.3333333333333"/>
+                                <rect key="frame" x="-113" y="-120.66666666666674" width="640" height="1137.3333333333333"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
                                 <rect key="frame" x="106" y="426.66666666666669" width="202" height="43"/>
@@ -127,7 +127,16 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addRowButton:" destination="GDb-Ow-cpV" eventType="touchUpInside" id="ITE-8z-kJX"/>
+                                    <action selector="addRowButtonFunc:" destination="GDb-Ow-cpV" eventType="touchUpInside" id="DSr-qT-BXr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKA-pB-w47">
+                                <rect key="frame" x="322" y="44" width="34" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editRowButton:" destination="GDb-Ow-cpV" eventType="touchUpInside" id="nUY-W9-Vfk"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NnV-E8-f2T">
@@ -203,14 +212,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKA-pB-w47">
-                                <rect key="frame" x="322" y="44" width="34" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc3-mm-90Q">
+                                <rect key="frame" x="258" y="44" width="47" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="editRowButton:" destination="GDb-Ow-cpV" eventType="touchUpInside" id="nUY-W9-Vfk"/>
-                                </connections>
+                                <state key="normal" title="Done"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -226,6 +232,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Studio Ghibli API" image="music.note" catalog="system" id="rkt-P8-Fji"/>
                     <connections>
+                        <outlet property="addRowButton" destination="qyS-NS-Cq7" id="Hty-p6-kTb"/>
+                        <outlet property="doneButton" destination="Vc3-mm-90Q" id="soi-Cm-I1T"/>
                         <outlet property="tableView" destination="NnV-E8-f2T" id="J2u-tO-ytq"/>
                     </connections>
                 </viewController>

@@ -13,14 +13,39 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     
     
-    @IBAction func addRowButton(_ sender: Any) {
+    @IBOutlet weak var addRowButton: UIButton!
+    
+    
+    @IBAction func addRowButtonFunc(_ sender: Any) {
         //Insert a row
     }
+    
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBAction func editRowButton(_ sender: Any) {
         //Able to rearrange cells
         //Able to display delete button on the left
         tableView.isEditing = true
+        
+//        func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//            return .none
+//        }
+//
+//        func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//            return false
+//        }
+//
+//        //rearrange method
+//        func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//            let movedObject = self.movies[sourceIndexPath.row]
+//            movies.remove(at: sourceIndexPath.row)
+//            movies.insert(movedObject, at: destinationIndexPath.row)
+//            debugPrint("\(sourceIndexPath.row) => \(destinationIndexPath.row)")
+//            // To check for correctness enable: self.tableView.reloadData()
+//        }
+        
+        doneButton.isHidden = false;
+        
     }
     
     private var dateCellExpanded: Bool = false
@@ -45,6 +70,9 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //Hide the Done button until Edit button is clicked
+        doneButton.isHidden = true;
     }
 
     
@@ -71,6 +99,9 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 tableView.endUpdates()
             }
     }
+    
+    
+
 
     //Expand the cell size when clicked
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
