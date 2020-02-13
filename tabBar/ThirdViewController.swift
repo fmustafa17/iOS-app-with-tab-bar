@@ -22,30 +22,11 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var doneButton: UIButton!
     
-    @IBAction func editRowButton(_ sender: Any) {
-        //Able to rearrange cells
-        //Able to display delete button on the left
-        tableView.isEditing = true
-        
-//        func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//            return .none
-//        }
-//
-//        func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-//            return false
-//        }
-//
-//        //rearrange method
-//        func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//            let movedObject = self.movies[sourceIndexPath.row]
-//            movies.remove(at: sourceIndexPath.row)
-//            movies.insert(movedObject, at: destinationIndexPath.row)
-//            debugPrint("\(sourceIndexPath.row) => \(destinationIndexPath.row)")
-//            // To check for correctness enable: self.tableView.reloadData()
-//        }
-        
-        doneButton.isHidden = false;
-        
+    
+    @IBAction func doneButtonFunc(_ sender: Any) {
+        //Get out of editing mode and hide the Done button
+        tableView.isEditing = false
+        doneButton.isHidden = true
     }
     
     private var dateCellExpanded: Bool = false
@@ -75,6 +56,20 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         doneButton.isHidden = true;
     }
 
+    @IBAction func editRowButton(_ sender: Any) {
+        //Able to rearrange cells
+        //Able to display delete button on the left
+        tableView.isEditing = true
+        doneButton.isHidden = false
+        
+        func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+            return .none
+        }
+
+        func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+            return false
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
         return 1
@@ -100,7 +95,13 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
     }
     
-    
+    //Rearrange cells when edit button is pressed
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = movies[sourceIndexPath.row]
+        movies.remove(at: sourceIndexPath.row)
+        movies.insert(movedObject, at: destinationIndexPath.row)
+        debugPrint("\(sourceIndexPath.row) => \(destinationIndexPath.row)")
+    }
 
 
     //Expand the cell size when clicked
