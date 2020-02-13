@@ -19,6 +19,7 @@
 		F223AB4F23F32CA400F43526 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223AB4E23F32CA400F43526 /* ThirdViewController.swift */; };
 		F223AB5123F32DCB00F43526 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223AB5023F32DCB00F43526 /* FourthViewController.swift */; };
 		F223AB5323F32DE200F43526 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223AB5223F32DE200F43526 /* FifthViewController.swift */; };
+		F267792123F4CE46006CD298 /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267792023F4CE46006CD298 /* AddMovieViewController.swift */; };
 		F270EEE723F35E5A00CD026D /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F270EEE623F35E5A00CD026D /* MovieTableCell.swift */; };
 		F270EEE923F35E8B00CD026D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F270EEE823F35E8B00CD026D /* Movie.swift */; };
 		F270EEEB23F35EC100CD026D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F270EEEA23F35EC100CD026D /* NetworkManager.swift */; };
@@ -60,6 +61,7 @@
 		F223AB4E23F32CA400F43526 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		F223AB5023F32DCB00F43526 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		F223AB5223F32DE200F43526 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		F267792023F4CE46006CD298 /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		F270EEE623F35E5A00CD026D /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
 		F270EEE823F35E8B00CD026D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		F270EEEA23F35EC100CD026D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				F223AB2023F325CF00F43526 /* FirstViewController.swift */,
 				F223AB2223F325CF00F43526 /* SecondViewController.swift */,
 				F223AB4E23F32CA400F43526 /* ThirdViewController.swift */,
+				F267792023F4CE46006CD298 /* AddMovieViewController.swift */,
 				F223AB2423F325CF00F43526 /* Main.storyboard */,
 				F223AB5023F32DCB00F43526 /* FourthViewController.swift */,
 				F223AB5223F32DE200F43526 /* FifthViewController.swift */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F270EEE923F35E8B00CD026D /* Movie.swift in Sources */,
+				F267792123F4CE46006CD298 /* AddMovieViewController.swift in Sources */,
 				F223AB5123F32DCB00F43526 /* FourthViewController.swift in Sources */,
 				F270EEEB23F35EC100CD026D /* NetworkManager.swift in Sources */,
 				F223AB2323F325CF00F43526 /* SecondViewController.swift in Sources */,

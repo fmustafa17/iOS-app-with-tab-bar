@@ -18,6 +18,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func addRowButtonFunc(_ sender: Any) {
         //Insert a row
+        
     }
     
     @IBOutlet weak var doneButton: UIButton!
@@ -47,8 +48,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }) { (error) in
             print(error)
         }
-        // For removing the extra empty spaces of TableView below
-        //tableView.tableFooterView = UIView()
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -135,4 +135,18 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 50
     }
 
+    
+    
+    //Add Movie functions. With collaboration from AddMovieViewController.swift
+    
+    var newMovie = Movie(title: "", description: "", director: "")
+    
+     @IBAction func done(segue:UIStoryboardSegue) {
+        let addMovieVC = segue.source as! AddMovieViewController
+        newMovie = addMovieVC.name
+           
+        movies.append(newMovie)
+        tableView.reloadData()
+    }
+    
 }
