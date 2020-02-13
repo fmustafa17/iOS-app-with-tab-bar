@@ -9,9 +9,7 @@
 import Foundation
 
 struct Movie: Codable {
-//    var id: String
     var title: String
-    var description: String
     var director: String
-//    var producer: String
+    var description: String
 }
