@@ -9,14 +9,13 @@
 import UIKit
 
 class AddMovieViewController: UIViewController {
-
+    @IBOutlet weak var movieName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBOutlet weak var movieName: UITextField!
     
     //var name: String = ""
     var name = Movie(title: "", description: "", director: "")
@@ -26,6 +25,7 @@ class AddMovieViewController: UIViewController {
         if segue.identifier == "doneSegue" {
             //name = movieName.text!
             name.title = movieName.text!
+            print(name.title)
         }
     }
     

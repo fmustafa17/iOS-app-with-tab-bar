@@ -138,13 +138,19 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     //Add Movie functions. With collaboration from AddMovieViewController.swift
-    
     var newMovie = Movie(title: "", description: "", director: "")
-    
-     @IBAction func done(segue:UIStoryboardSegue) {
+
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        print("cancel was pressed")
+    }
+
+    @IBAction func done(segue:UIStoryboardSegue) {
+        print("done was pressed")
         let addMovieVC = segue.source as! AddMovieViewController
-        newMovie = addMovieVC.name
-           
+        newMovie.title = addMovieVC.name.title
+
+        
+        
         movies.append(newMovie)
         tableView.reloadData()
     }
