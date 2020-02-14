@@ -71,6 +71,23 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    
+    //Add Movie functions. With collaboration from AddMovieViewController.swift
+    var newMovie = Movie(title: "", director: "", description: "")
+
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        print("cancel was pressed")
+    }
+
+    @IBAction func done(segue:UIStoryboardSegue) {
+        print("done was pressed")
+        let addMovieVC = segue.source as! AddMovieViewController
+        newMovie = Movie(title: addMovieVC.name.title, director: addMovieVC.name.director, description: addMovieVC.name.description)
+
+        movies.append(newMovie)
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
         return 1
     }
@@ -134,25 +151,4 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         return 50
     }
-
-    
-    
-    //Add Movie functions. With collaboration from AddMovieViewController.swift
-    var newMovie = Movie(title: "", description: "", director: "")
-
-    @IBAction func cancel(segue:UIStoryboardSegue) {
-        print("cancel was pressed")
-    }
-
-    @IBAction func done(segue:UIStoryboardSegue) {
-        print("done was pressed")
-        let addMovieVC = segue.source as! AddMovieViewController
-        newMovie.title = addMovieVC.name.title
-
-        
-        
-        movies.append(newMovie)
-        tableView.reloadData()
-    }
-    
 }

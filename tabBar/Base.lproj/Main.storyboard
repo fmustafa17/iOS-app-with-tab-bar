@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1659.4202898550725" y="359.59821428571428"/>
         </scene>
         <!--Add Movie View Controller-->
         <scene sceneID="sjm-gt-UDT">
@@ -100,21 +100,54 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Movie" id="Twh-Bz-rZY">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="N4m-nJ-ZxT">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="N4m-nJ-ZxT">
                                             <connections>
                                                 <segue destination="5U0-jo-OsM" kind="unwind" identifier="cancelSegue" unwindAction="cancelWithSegue:" id="hFd-8J-Gvk"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="qEu-w8-jw1">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qEu-w8-jw1">
                                             <connections>
-                                                <segue destination="5U0-jo-OsM" kind="unwind" identifier="doneSegue" unwindAction="doneWithSeque:" id="Nsf-cu-faI"/>
+                                                <segue destination="5U0-jo-OsM" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="SdY-FZ-zfQ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uay-aV-vOc">
-                                <rect key="frame" x="31" y="122" width="351" height="34"/>
+                                <rect key="frame" x="32" y="176" width="351" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZr-jc-ZFj">
+                                <rect key="frame" x="32" y="147" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Director:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCM-gV-JsK">
+                                <rect key="frame" x="32" y="218" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-rd-NeX">
+                                <rect key="frame" x="32" y="247" width="351" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-A1-JoR">
+                                <rect key="frame" x="32" y="289" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHK-vw-UrQ">
+                                <rect key="frame" x="32" y="318" width="351" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -124,13 +157,15 @@
                         <viewLayoutGuide key="safeArea" id="SLu-JP-GZ0"/>
                     </view>
                     <connections>
+                        <outlet property="movieDescription" destination="PHK-vw-UrQ" id="bV1-oH-XAI"/>
+                        <outlet property="movieDirector" destination="qTU-rd-NeX" id="BZz-jq-Qqs"/>
                         <outlet property="movieName" destination="uay-aV-vOc" id="Gfu-1L-c9W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ml-th-9cF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5U0-jo-OsM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1665.217391304348" y="1397.5446428571429"/>
+            <point key="canvasLocation" x="-925" y="1430"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -144,7 +179,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="GDb-Ow-cpV" kind="relationship" relationship="viewControllers" id="5tV-me-dWk"/>
+                        <segue destination="mIG-Qi-hXw" kind="relationship" relationship="viewControllers" id="5tV-me-dWk"/>
                         <segue destination="CrB-AK-XBP" kind="relationship" relationship="viewControllers" id="p8Q-fI-mmW"/>
                         <segue destination="vMV-ts-ITu" kind="relationship" relationship="viewControllers" id="un9-qU-3yF"/>
                     </connections>
@@ -153,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Studio Ghibli API-->
+        <!--Third View Controller-->
         <scene sceneID="mLE-fQ-SDA">
             <objects>
                 <viewController id="GDb-Ow-cpV" customClass="ThirdViewController" customModule="tabBar" customModuleProvider="target" sceneMemberID="viewController">
@@ -277,7 +312,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fx7-77-QLm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Studio Ghibli API" image="music.note" catalog="system" id="rkt-P8-Fji"/>
+                    <navigationItem key="navigationItem" id="jHU-GH-0SF"/>
                     <connections>
                         <outlet property="addRowButton" destination="qyS-NS-Cq7" id="Hty-p6-kTb"/>
                         <outlet property="doneButton" destination="Vc3-mm-90Q" id="soi-Cm-I1T"/>
@@ -286,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUE-dY-AmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1665.217391304348" y="709.82142857142856"/>
+            <point key="canvasLocation" x="-1665" y="1430"/>
         </scene>
         <!--Fifth-->
         <scene sceneID="jy9-aD-leZ">
@@ -311,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwY-By-Vjz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="710"/>
+            <point key="canvasLocation" x="910.14492753623199" y="709.82142857142856"/>
         </scene>
         <!--Fourth-->
         <scene sceneID="0KM-PE-sLY">
@@ -336,7 +371,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ys-B5-oqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-832" y="710"/>
+            <point key="canvasLocation" x="76.811594202898561" y="709.82142857142856"/>
+        </scene>
+        <!--Studio Ghibli API-->
+        <scene sceneID="PQQ-lB-1EP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mIG-Qi-hXw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Studio Ghibli API" image="music.note" catalog="system" id="rkt-P8-Fji"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="63u-QS-1AV">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GDb-Ow-cpV" kind="relationship" relationship="rootViewController" id="wEc-HF-l4u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjD-Jo-kXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1665" y="710"/>
         </scene>
     </scenes>
     <resources>
